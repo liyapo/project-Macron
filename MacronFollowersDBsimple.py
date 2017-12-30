@@ -28,11 +28,11 @@ for i in range(20):
     print(fllw[0])
     time.sleep(5)
 
-cur.execute("SELECT * FROM MacFol")
+"""cur.execute("SELECT * FROM MacFol")
 rows = cur.fetchall()
 
 for row in rows:
-    print(row)
+    print(row)"""
 
 # commit the changes to the database
 conn.commit()
