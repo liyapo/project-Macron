@@ -38,10 +38,3 @@ for row in rows:
 conn.commit()
 # close communication with the database
 conn.close()
-
-
-
-
-
-
-
