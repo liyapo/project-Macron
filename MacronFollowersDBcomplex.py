@@ -67,10 +67,3 @@ except KeyboardInterrupt:
 conn.commit()
 # close communication with the database
 conn.close()
-
-
-
-
-
-
-
