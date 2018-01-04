@@ -14,7 +14,7 @@ print("Connected to MacronFollowers database!")
 
 # execute the INSERT statement
 cur.execute("DROP TABLE IF EXISTS MacFol")
-cur.execute("CREATE TABLE MacFol(NumConn INTEGER, DateTime TIMESTAMP WITH TIME ZONE, NumFol INTEGER)")
+cur.execute("CREATE TABLE MacFol(DateTime TIMESTAMP WITH TIME ZONE, NumFol INTEGER)")
 
 for i in range(20):
     website = requests.get('https://twitter.com/emmanuelmacron')
@@ -23,7 +23,7 @@ for i in range(20):
     #Find class a with attribute 'followers' and access its number
     fllw = htmlpage.xpath("//a[@data-nav='followers']/span/@data-count")
     dt = datetime.now()
-    cur.execute('INSERT INTO MacFol VALUES (%s,%s, %s)', (i+1, dt, fllw[0]))
+    cur.execute('INSERT INTO MacFol VALUES (%s, %s)', (dt, fllw[0]))
     print(dt)
     print(fllw[0])
     time.sleep(5)
